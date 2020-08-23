@@ -1,6 +1,6 @@
-import React from 'react;
+import React from 'react';
 
-const square = ({location, markSquare, player}) => {
+const Square = ({location, markSquare, player}) => {
 
   const handleClick = () => {
     markSquare(location);
@@ -10,4 +10,4 @@ const square = ({location, markSquare, player}) => {
   )
 }
 
-export default square;
+export default Square;

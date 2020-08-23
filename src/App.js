@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import NoughtsAndCross from './containers/NoughtsAndCross';
+import NoughtsAndCrosses from './containers/NoughtsAndCrosses';
 
 class App extends Component {
   render() {
     return (
-      <NoughtsAndCross/>
+      <NoughtsAndCrosses/>
     );
   }
 }
