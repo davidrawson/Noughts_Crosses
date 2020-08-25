@@ -7,7 +7,6 @@ const Square = ({location, markSquare, player}) => {
   }
 
   return (<div classname="square" onClick={handleClick}>{player}</div>)
-  )
 }
 
 export default Square;
