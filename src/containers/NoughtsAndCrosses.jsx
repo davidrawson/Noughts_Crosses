@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Grid from '../components/Grid';
 import LINES_OF_THREE from '../helpers/linesOfThree';
+import ReplayButton from '../components/ReplayButton';
 
 class NoughtsAndCrosses extends Component {
 
@@ -12,6 +13,7 @@ class NoughtsAndCrosses extends Component {
       currentPlayer: "O"
     };
     this.markSquare = this.markSquare.bind(this);
+    this.newGame = this.newGame.bind(this);
   }
 
   isEmptySquare(location){
@@ -59,6 +61,14 @@ class NoughtsAndCrosses extends Component {
     return !this.state.grid.includes(null);
   }
 
+  newGame() {
+    this.setState({
+      grid: Array(9).fill(null),
+      winner: null,
+      currentPlayer: "O"
+    })
+  }
+
   render() {
     return (
       <div>
@@ -69,12 +79,12 @@ class NoughtsAndCrosses extends Component {
         {/* <GameStatus
           winner={this.state.winner}
         /> */}
-        {/* <Button
+        <ReplayButton
           isVisible={this.state.winner}
           callback={this.newGame}
           text='Play Again'
-          className='play-again-button'
-        /> */}
+          className='replay-button'
+        />
       </div>
     )
   }
