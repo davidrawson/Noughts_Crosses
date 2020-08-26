@@ -10,9 +10,11 @@ class NoughtsAndCrosses extends Component {
     this.state = {
       grid: Array(9).fill(null),
       winner: null,
-      currentPlayer: "O"
+      currentPlayer: "O",
+      winningLine: Array(3)
     };
     this.markSquare = this.markSquare.bind(this);
+    // this.markWinningSquare = this.markWinningSquare.bind(this);
     this.newGame = this.newGame.bind(this);
   }
 
@@ -33,18 +35,31 @@ class NoughtsAndCrosses extends Component {
     }
   }
 
+  markWinningSquares() {
+    // this.state.winningLine[0]
+    const newGrid = this.state.grid.slice();
+    newGrid[this.state.winningLine[0]] = this.state.winningSquare;
+
+  }
+
   checkGameWon() {
     let winner = null; // is it not already wet to null formthe constructor?
 
-    LINES_OF_THREE.forEach((line) => {
+    LINES_OF_THREE.forEach((line, index) => {
       if (line.every(squareIndex => this.state.grid[squareIndex] === this.state.currentPlayer)) {
         winner = this.state.currentPlayer;
+        this.setState({winningLine: line})
       }
+
     });
 
     if (!winner && this.gridComplete()) {
       winner = "Cat's Game!";
     }
+
+    // if (winner) {
+    //   this.markWinningSquares();
+    // }
 
     winner ? this.setState({winner: winner}) : this.nextTurn();
   }
@@ -65,7 +80,8 @@ class NoughtsAndCrosses extends Component {
     this.setState({
       grid: Array(9).fill(null),
       winner: null,
-      currentPlayer: "O"
+      currentPlayer: "O",
+      winningLine: Array(3)
     })
   }
 
@@ -75,6 +91,8 @@ class NoughtsAndCrosses extends Component {
         <Grid
           grid={this.state.grid}
           markSquare={this.markSquare}
+          winningLine={this.state.winningLine}
+          winningSquare={this.state.winningSquare}
         />
         {/* <GameStatus
           winner={this.state.winner}

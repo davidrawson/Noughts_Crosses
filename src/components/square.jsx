@@ -1,12 +1,18 @@
 import React from 'react';
 
-const Square = ({location, markSquare, player}) => {
+const Square = ({location, markSquare, player, winningLine}) => {
 
   const handleClick = () => {
     markSquare(location);
   }
 
-  return (<div className="square" onClick={handleClick}>{player}</div>)
+  let id = "yellow";
+
+  if (winningLine.includes(location)) {
+    id = "red";
+  }
+
+  return (<div className="square" id={id} onClick={handleClick}>{player}</div>)
 }
 
 export default Square;

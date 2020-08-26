@@ -1,7 +1,7 @@
 import React from 'react';
 import Square from './Square';
 
-const Grid = ({grid, markSquare}) => {
+const Grid = ({grid, markSquare, winningLine}) => {
   const squares = grid.map(function(letter, index){
     return (
       <Square
@@ -9,24 +9,16 @@ const Grid = ({grid, markSquare}) => {
         location={index}
         markSquare={markSquare}
         player={letter}
+        winningLine={winningLine}
       />
     )
   })
 
   return(
-    <div id="grid">
+    <div className="grid">
       {squares}
     </div>
   )
-
-  // return (
-  //   <div>
-  //     <Grid
-  //       grid={this.state.grid}
-  //     />
-  //   </div>
-  //
-  // )
 }
 
 export default Grid;
