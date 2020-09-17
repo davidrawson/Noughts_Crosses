@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Grid from '../components/Grid';
 import LINES_OF_THREE from '../helpers/linesOfThree';
 import ReplayButton from '../components/ReplayButton';
+import Status from '../components/Status';
 
 class NoughtsAndCrosses extends Component {
 
@@ -54,7 +55,7 @@ class NoughtsAndCrosses extends Component {
     });
 
     if (!winner && this.gridComplete()) {
-      winner = "Cat's Game!";
+      winner = "DRAW";
     }
 
     // if (winner) {
@@ -92,11 +93,10 @@ class NoughtsAndCrosses extends Component {
           grid={this.state.grid}
           markSquare={this.markSquare}
           winningLine={this.state.winningLine}
-          winningSquare={this.state.winningSquare}
         />
-        {/* <GameStatus
+        <Status
           winner={this.state.winner}
-        /> */}
+        />
         <ReplayButton
           isVisible={this.state.winner}
           callback={this.newGame}

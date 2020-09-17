@@ -5,7 +5,7 @@ const Grid = ({grid, markSquare, winningLine}) => {
   const squares = grid.map(function(letter, index){
     return (
       <Square
-        id={index}
+        key={index}
         location={index}
         markSquare={markSquare}
         player={letter}
