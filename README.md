@@ -1,3 +1,9 @@
+<img src="https://github.com/davidrawson/Noughts_Crosses/blob/master/Screenshot%202020-09-17%20at%2020.35.45.png" width="30%"></img>
+<img src="https://github.com/davidrawson/Noughts_Crosses/blob/master/Screenshot%202020-09-17%20at%2020.36.20.png" width="30%"></img>
+<img src="https://github.com/davidrawson/Noughts_Crosses/blob/master/Screenshot%202020-09-17%20at%2020.37.10.png" width="30%"></img>
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
